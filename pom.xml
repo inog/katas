@@ -7,6 +7,12 @@
     <groupId>de.ingoreschke</groupId>
     <artifactId>kata</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <java.version>1.11</java.version>
+        <maven.compiler.source>1.11</maven.compiler.source>
+        <maven.compiler.target>1.11</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -14,6 +20,13 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 

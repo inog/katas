@@ -1,6 +1,7 @@
 package katalist;
 
 
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,8 +20,16 @@ public class ActionTest {
 
     @Test
    public void filterListByProperty() {
-        List<Person> result = cut.filterListByProperty(new ArrayList<Person>());
+        List<Person> personList = new ArrayList();
+        personList.add(new Person("Ingo", "Reschke", 42));
+        personList.add(new Person("Tapio","Reschke",9));
+        personList.add(new Person("Juna","Reschke",7));
+        personList.add(new Person("Mio","Reschke",4));
+
+        List<Person> result = cut.filterListByProperty(personList);
         Assert.assertNotNull(result);
+        Assert.assertEquals(4, personList.size());
+        Assertions.assertThat(personList.size()).isEqualTo(4);
 
     }
 }
