@@ -5,6 +5,9 @@ public class Person {
     private String lastName;
     private int age;
     private String status;
+    public enum Status {
+        ACTIV, INACTIV;
+    };
 
 
     public Person(String firstName, String lastName, int age, String status) {

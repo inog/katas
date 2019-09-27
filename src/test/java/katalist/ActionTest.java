@@ -23,11 +23,11 @@ public class ActionTest {
     @Test
    public void filterListByProperty() {
         List<Person> personList = new ArrayList();
-        personList.add(new Person("Ingo", "Müller", 42));
-        personList.add(new Person("Tapio","Müller",9));
-        personList.add(new Person("Juna","Müller",7));
-        personList.add(new Person("Mio","Müller",4));
-        personList.add(new Person("Mio","Maier",4));
+        personList.add(new Person("Ingo", "Müller", 42, Person.Status.ACTIV.toString()));
+        personList.add(new Person("Tapio","Müller",9, Person.Status.ACTIV.toString()));
+        personList.add(new Person("Juna","Müller",7, Person.Status.ACTIV.toString()));
+        personList.add(new Person("Mio","Müller",4,Person.Status.ACTIV.toString()));
+        personList.add(new Person("Mio","Maier",4,Person.Status.ACTIV.toString()));
 
         List<Person> result = cut.filterListByProperty(personList);
         assertThat(result).isNotNull();
