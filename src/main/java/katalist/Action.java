@@ -1,6 +1,6 @@
 package katalist;
 
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Action {
@@ -9,7 +9,11 @@ public class Action {
         List<Person> muellers = personList.stream()
                 .filter(person -> person.getLastName().equals("Müller"))
                 .collect(Collectors.toList());
-
-        return muellers;
+        Map<String,Person> lastStatusMap = new LinkedHashMap<>();
+        muellers.forEach(person -> {
+            lastStatusMap.put(person.getFirstName(), person);
+        });
+        List<Person> values = new ArrayList<Person> (lastStatusMap.values());
+        return values;
     }
 }
