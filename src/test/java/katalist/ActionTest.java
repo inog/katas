@@ -9,6 +9,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.*;
+
 
 public class ActionTest {
     Action cut;
@@ -21,15 +23,15 @@ public class ActionTest {
     @Test
    public void filterListByProperty() {
         List<Person> personList = new ArrayList();
-        personList.add(new Person("Ingo", "Reschke", 42));
-        personList.add(new Person("Tapio","Reschke",9));
-        personList.add(new Person("Juna","Reschke",7));
-        personList.add(new Person("Mio","Reschke",4));
+        personList.add(new Person("Ingo", "Müller", 42));
+        personList.add(new Person("Tapio","Müller",9));
+        personList.add(new Person("Juna","Müller",7));
+        personList.add(new Person("Mio","Müller",4));
+        personList.add(new Person("Mio","Maier",4));
 
         List<Person> result = cut.filterListByProperty(personList);
-        Assert.assertNotNull(result);
-        Assert.assertEquals(4, personList.size());
-        Assertions.assertThat(personList.size()).isEqualTo(4);
+        assertThat(result).isNotNull();
+        assertThat(result.size()).isEqualTo(4);
 
     }
 }
