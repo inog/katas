@@ -26,18 +26,24 @@ public class ActionTest {
         personList.add(new Person(0,"Ingo", "Müller", 42, Person.Status.ACTIV.toString()));
         personList.add(new Person(1,"Tapio","Müller",9, Person.Status.ACTIV.toString()));
         personList.add(new Person(2,"Juna","Müller",7, Person.Status.ACTIV.toString()));
+
         personList.add(new Person(3,"Mio","Müller",4,Person.Status.ACTIV.toString()));
         personList.add(new Person(3,"Mio","Müller",4,Person.Status.INACTIV.toString()));
+
         personList.add(new Person(3,"Mio","Müller",4,Person.Status.ACTIV.toString()));
         personList.add(new Person(3,"Mio","Müller",4,Person.Status.INACTIV.toString()));
+
         personList.add(new Person(3,"Mio","Müller",4,Person.Status.ACTIV.toString()));
         personList.add(new Person(3,"Mio","Müller",4,Person.Status.INACTIV.toString()));
+
         personList.add(new Person(4,"Mio","Maier",4,Person.Status.ACTIV.toString()));
+
         personList.add(new Person(0,"Ingo", "Müller", 42, Person.Status.INACTIV.toString()));
 
+        assertThat(personList.size()).isEqualTo(11);
         List<Person> result = cut.filterListByProperty(personList);
         assertThat(result).isNotNull();
-        assertThat(result.size()).isEqualTo(4);
+        assertThat(result.size()).isEqualTo(5);
         assertThat(result.get(3).getFirstName()).isEqualTo("Mio");
         assertThat(result.get(3).getStatus()).isEqualTo("INACTIV");
 
