@@ -9,8 +9,9 @@ public class Action {
         List<Person> muellers = personList.stream()
                 .filter(person -> person.getLastName().equals("Müller"))
                 .collect(Collectors.toList());
+
         Map<String,Person> lastStatusMap = new LinkedHashMap<>();
-        muellers.forEach(person -> {
+        personList.forEach(person -> {
             lastStatusMap.put(person.getFirstName(), person);
         });
         List<Person> values = new ArrayList<Person> (lastStatusMap.values());

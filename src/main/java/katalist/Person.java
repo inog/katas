@@ -1,6 +1,7 @@
 package katalist;
 
 public class Person {
+    private int id;
     private String firstName;
     private String lastName;
     private int age;
@@ -10,12 +11,15 @@ public class Person {
     };
 
 
-    public Person(String firstName, String lastName, int age, String status) {
+    public Person(int id, String firstName, String lastName, int age, String status) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.status = status;
     }
+
+    public int getId() {return id; }
 
     public String getFirstName() {
         return firstName;
