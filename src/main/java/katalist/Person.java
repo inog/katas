@@ -1,14 +1,14 @@
 package katalist;
 
 public class Person {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String status;
+    private final int id;
+    private final String firstName;
+    private final String lastName;
+    private final int age;
+    private final String status;
     public enum Status {
-        ACTIV, INACTIV;
-    };
+        ACTIVE, INACTIVE
+    }
 
 
     public Person(int id, String firstName, String lastName, int age, String status) {

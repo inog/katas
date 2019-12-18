@@ -5,6 +5,6 @@ import java.util.List;
 public class Count {
 
     public long count (List<Integer> list){
-        return list.stream().count();
+        return list.size();
     }
 }

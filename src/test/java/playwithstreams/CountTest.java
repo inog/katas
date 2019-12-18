@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 
 public class CountTest {
-    Count cut = new Count();
+    final Count cut = new Count();
 
     @Test
     public void count() {
