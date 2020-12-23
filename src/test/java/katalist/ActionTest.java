@@ -1,44 +1,41 @@
 package katalist;
 
-
-import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class ActionTest {
     Action cut;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         cut = new Action();
     }
 
     @Test
-   public void filterListByProperty() {
+    public void filterListByProperty() {
         List<Person> personList = new ArrayList();
-        personList.add(new Person(0,"Ingo", "Müller", 42, Person.Status.ACTIV.toString()));
-        personList.add(new Person(1,"Tapio","Müller",9, Person.Status.ACTIV.toString()));
-        personList.add(new Person(2,"Juna","Müller",7, Person.Status.ACTIV.toString()));
+        personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.ACTIV.toString()));
+        personList.add(new Person(1, "Tapio", "Müller", 9, Person.Status.ACTIV.toString()));
+        personList.add(new Person(2, "Juna", "Müller", 7, Person.Status.ACTIV.toString()));
 
-        personList.add(new Person(3,"Mio","Müller",4,Person.Status.ACTIV.toString()));
-        personList.add(new Person(3,"Mio","Müller",4,Person.Status.INACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIV.toString()));
 
-        personList.add(new Person(3,"Mio","Müller",4,Person.Status.ACTIV.toString()));
-        personList.add(new Person(3,"Mio","Müller",4,Person.Status.INACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIV.toString()));
 
-        personList.add(new Person(3,"Mio","Müller",4,Person.Status.ACTIV.toString()));
-        personList.add(new Person(3,"Mio","Müller",4,Person.Status.INACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIV.toString()));
 
-        personList.add(new Person(4,"Mio","Maier",4,Person.Status.ACTIV.toString()));
+        personList.add(new Person(4, "Mio", "Maier", 4, Person.Status.ACTIV.toString()));
 
-        personList.add(new Person(0,"Ingo", "Müller", 42, Person.Status.INACTIV.toString()));
+        personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.INACTIV.toString()));
 
         assertThat(personList.size()).isEqualTo(11);
         List<Person> result = cut.filterListByProperty(personList);
