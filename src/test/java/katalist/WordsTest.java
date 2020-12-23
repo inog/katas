@@ -16,6 +16,8 @@ public class WordsTest {
         words.add("bb");
         words.add("ccc");
         cut.forLoop(words);
+        //Todo Asserts.
     }
+
 
 }
