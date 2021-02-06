@@ -3,10 +3,12 @@ package katalist;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 
 public class ActionTest {
@@ -20,6 +22,7 @@ public class ActionTest {
     @Test
     public void filterListByProperty() {
         List<Person> personList = new ArrayList();
+
         personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.ACTIV.toString()));
         personList.add(new Person(1, "Tapio", "Müller", 9, Person.Status.ACTIV.toString()));
         personList.add(new Person(2, "Juna", "Müller", 7, Person.Status.ACTIV.toString()));
@@ -48,6 +51,7 @@ public class ActionTest {
         Person ingo = result.get(0);
         assertEquals("Ingo", ingo.getFirstName());
         assertEquals("INACTIV", ingo.getStatus());
+
 
     }
 }
