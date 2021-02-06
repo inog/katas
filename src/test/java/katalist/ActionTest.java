@@ -3,7 +3,6 @@ package katalist;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,22 +22,22 @@ public class ActionTest {
     public void filterListByProperty() {
         List<Person> personList = new ArrayList();
 
-        personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.ACTIV.toString()));
-        personList.add(new Person(1, "Tapio", "Müller", 9, Person.Status.ACTIV.toString()));
-        personList.add(new Person(2, "Juna", "Müller", 7, Person.Status.ACTIV.toString()));
+        personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.ACTIVE.toString()));
+        personList.add(new Person(1, "Tapio", "Müller", 9, Person.Status.ACTIVE.toString()));
+        personList.add(new Person(2, "Juna", "Müller", 7, Person.Status.ACTIVE.toString()));
 
-        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIV.toString()));
-        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIVE.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIVE.toString()));
 
-        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIV.toString()));
-        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIVE.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIVE.toString()));
 
-        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIV.toString()));
-        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIV.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.ACTIVE.toString()));
+        personList.add(new Person(3, "Mio", "Müller", 4, Person.Status.INACTIVE.toString()));
 
-        personList.add(new Person(4, "Mio", "Maier", 4, Person.Status.ACTIV.toString()));
+        personList.add(new Person(4, "Mio", "Maier", 4, Person.Status.ACTIVE.toString()));
 
-        personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.INACTIV.toString()));
+        personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.INACTIVE.toString()));
 
         assertTrue(personList.size() == 11);
 
@@ -46,11 +45,11 @@ public class ActionTest {
         assertNotNull(result);
         assertEquals(5, result.size());
         assertEquals("Mio", result.get(3).getFirstName());
-        assertEquals("INACTIV", result.get(3).getStatus());
+        assertEquals("INACTIVe", result.get(3).getStatus());
 
         Person ingo = result.get(0);
         assertEquals("Ingo", ingo.getFirstName());
-        assertEquals("INACTIV", ingo.getStatus());
+        assertEquals("INACTIVE", ingo.getStatus());
 
 
     }
