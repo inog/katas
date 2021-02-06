@@ -1,19 +1,19 @@
 package katalist;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ActionTest {
-    Action cut;
+    private static Action cut;
 
-    @Before
-    public void setUp() {
+    @BeforeAll
+    static void setUp() {
         cut = new Action();
     }
 
@@ -37,16 +37,17 @@ public class ActionTest {
 
         personList.add(new Person(0, "Ingo", "Müller", 42, Person.Status.INACTIV.toString()));
 
-        assertThat(personList.size()).isEqualTo(11);
+        assertTrue(personList.size() == 11);
+
         List<Person> result = cut.filterListByProperty(personList);
-        assertThat(result).isNotNull();
-        assertThat(result.size()).isEqualTo(5);
-        assertThat(result.get(3).getFirstName()).isEqualTo("Mio");
-        assertThat(result.get(3).getStatus()).isEqualTo("INACTIV");
+        assertNotNull(result);
+        assertEquals(5, result.size());
+        assertEquals("Mio", result.get(3).getFirstName());
+        assertEquals("INACTIV", result.get(3).getStatus());
 
         Person ingo = result.get(0);
-        assertThat(ingo.getFirstName()).isEqualTo("Ingo");
-        assertThat(ingo.getStatus()).isEqualTo("INACTIV");
+        assertEquals("Ingo", ingo.getFirstName());
+        assertEquals("INACTIV", ingo.getStatus());
 
     }
 }
