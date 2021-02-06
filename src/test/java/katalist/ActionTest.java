@@ -45,7 +45,7 @@ public class ActionTest {
         assertNotNull(result);
         assertEquals(5, result.size());
         assertEquals("Mio", result.get(3).getFirstName());
-        assertEquals("INACTIVe", result.get(3).getStatus());
+        assertEquals("INACTIVE", result.get(3).getStatus());
 
         Person ingo = result.get(0);
         assertEquals("Ingo", ingo.getFirstName());
