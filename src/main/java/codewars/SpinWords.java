@@ -19,10 +19,9 @@ public class SpinWords {
 
     public String spinWords(String sentence) {
         String[] wordArr = sentence.split(" ");
-        String sentenceWithSpinnedWords = Arrays.stream(wordArr)
+        return Arrays.stream(wordArr)
                 .map(w -> w.length() > 4 ? spinWord(w) : w)
                 .collect(Collectors.joining( " "));
-        return sentenceWithSpinnedWords;
     }
 
     private String spinWord(String word) {
