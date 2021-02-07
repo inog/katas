@@ -18,7 +18,7 @@ public class DiffOf2Collections {
         setA.addAll(setB);
 
 
-        return  setA.stream().collect(Collectors.toList());
+        return  setA.stream().sorted().collect(Collectors.toList());
     }
 }
 
