@@ -15,12 +15,15 @@ package codewars;
 public class SpinWords {
 
     public String spinWords(String sentence) {
+       // expected:
+        // <Just gniddik [ereht is llits] one more> but was:
+        // <Just gniddik [there is still] one more>
 
-        String[] wordArr = sentence.split(" ");
-
+        String[] wordArr = sentence.split("[\\W]");
         String result = "";
 
         for (String word: wordArr  ) {
+            System.out.println(word);
             if (word.length() > 5 ){
                 result += spinWord(word);
             } else {
@@ -38,7 +41,6 @@ public class SpinWords {
         for (int i = chars.length -1; i >= 0 ; i--) {
             result += chars[i];
         }
-
         return result;
     }
 }
