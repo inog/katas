@@ -15,24 +15,15 @@ package codewars;
 public class SpinWords {
 
     public String spinWords(String sentence) {
-       // expected:
-        // <Just gniddik [ereht is llits] one more> but was:
-        // <Just gniddik [there is still] one more>
-
         String[] wordArr = sentence.split("[\\W]");
-        String result = "";
 
-        for (String word: wordArr  ) {
-            System.out.println(word);
-            if (word.length() > 5 ){
-                result += spinWord(word);
-            } else {
-                result += word;
+        for (int i = 0; i < wordArr.length; i++) {
+            String word = wordArr[i];
+            if (word.length() >= 5) {
+                sentence = sentence.replace(word, spinWord(word));
             }
-            result += " ";
         }
-
-        return result.trim();
+        return  sentence;
     }
 
     private String spinWord(String word) {
