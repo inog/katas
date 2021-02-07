@@ -33,7 +33,7 @@ public class Words {
             System.out.println(word);
         }
 
-        //foreach Lamda java8 on Collection
+        //foreach Lambda java8 on Collection
         words.forEach(word -> System.out.println(word));
         // foreach Method reference on Collection
         words.forEach(System.out::println);
