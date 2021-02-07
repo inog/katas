@@ -1,4 +1,5 @@
 package codewars;
+
 /**
  Write a function that takes in a string of one or more words, and returns the same string,
  but with all five or more letter words reversed (Just like the name of this Kata).
@@ -14,7 +15,25 @@ package codewars;
 public class SpinWords {
 
     public String spinWords(String sentence) {
-        char[] chars = sentence.toCharArray();
+
+        String[] wordArr = sentence.split(" ");
+
+        String result = "";
+
+        for (String word: wordArr  ) {
+            if (word.length() > 5 ){
+                result += spinWord(word);
+            } else {
+                result += word;
+            }
+            result += " ";
+        }
+
+        return result.trim();
+    }
+
+    private String spinWord(String word) {
+        char[] chars = word.toCharArray();
         String result = "";
         for (int i = chars.length -1; i >= 0 ; i--) {
             result += chars[i];
