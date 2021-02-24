@@ -25,8 +25,12 @@ import java.util.stream.Collectors;
 public class JadenCasingStrings {
 
     public String toJadenCase(String phrase) {
+        if(phrase == null || phrase.isBlank()) return null;
+
         String[] words = phrase.split(" ");
-        String jadenPhrase = Arrays.stream(words).map(word -> word.substring(0, 1).toUpperCase() + word.substring(1)).collect(Collectors.joining(" "));
+        String jadenPhrase = Arrays.stream(words)
+                .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1))
+                .collect(Collectors.joining(" "));
 
         return jadenPhrase;
     }
