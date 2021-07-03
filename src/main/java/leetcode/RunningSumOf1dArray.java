@@ -16,6 +16,8 @@ package leetcode;
  */
 
 class RunningSumOf1dArray {
-
+    public int[] runningSum(int[] nums) {
+        return null;
+    }
 
 }
