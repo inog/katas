@@ -1,4 +1,5 @@
 package leetcode;
+
 /**
  * Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
  *
@@ -17,7 +18,13 @@ package leetcode;
 
 class RunningSumOf1dArray {
     public int[] runningSum(int[] nums) {
-        return null;
+        int x = 0;
+        int[] result = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = nums[i]+x;
+            x=result[i];
+        }
+        return result;
     }
 
 }
