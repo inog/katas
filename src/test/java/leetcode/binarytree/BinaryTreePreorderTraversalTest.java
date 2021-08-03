@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class BinaryTreePreorderTraversalTest {
@@ -22,7 +23,7 @@ class BinaryTreePreorderTraversalTest {
         List<Integer> result = cut.preorderTraversal(root);
 
         assertNotNull(result);
-
+        assertArrayEquals(expectedResult.toArray(), result.toArray());
     }
 
 }

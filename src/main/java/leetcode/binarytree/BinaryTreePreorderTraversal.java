@@ -14,8 +14,18 @@ import java.util.List;
 public class BinaryTreePreorderTraversal {
 
     public List<Integer> preorderTraversal(TreeNode root) {
-
-        return new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
+        if (root != null){
+            result.add(root.val);
+            if(root.left != null){
+                List<Integer> resultLeft = preorderTraversal(root.left);
+                result.addAll(resultLeft);
+            }
+            if(root.right != null){
+                result.addAll(preorderTraversal(root.right));
+            }
+        }
+        return result;
     }
 }
 
