@@ -19,7 +19,7 @@ class DiffOf2CollectionsTest {
         assertEquals(list('d', 'e', 'j', 'z'), DiffOf2Collections.diff(list('a', 'b', 'z', 'd', 'e', 'd'), list('a', 'b', 'j', 'j')),"should return the sorted characters");
     }
 
-    public List<Character> list(char... elements) {
+    private List<Character> list(char... elements) {
         ArrayList<Character> list = new ArrayList<>();
         for (char s : elements) {
             list.add(s);
