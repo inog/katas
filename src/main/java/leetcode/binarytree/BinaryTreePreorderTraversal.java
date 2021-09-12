@@ -18,8 +18,7 @@ public class BinaryTreePreorderTraversal {
         if (root != null){
             result.add(root.val);
             if(root.left != null){
-                List<Integer> resultLeft = preorderTraversal(root.left);
-                result.addAll(resultLeft);
+                result.addAll(preorderTraversal(root.left));
             }
             if(root.right != null){
                 result.addAll(preorderTraversal(root.right));
