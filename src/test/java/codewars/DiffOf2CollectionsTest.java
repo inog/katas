@@ -1,5 +1,6 @@
 package codewars;
 
+import codewars.diffof2colections.java.DiffOf2Collections;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ class DiffOf2CollectionsTest {
 
     @Test
     public void exampleTests() {
-        assertEquals(list(),DiffOf2Collections.diff(list('a', 'b'), list('a', 'b')),"should return empty for the same content");
+        assertEquals(list(), DiffOf2Collections.diff(list('a', 'b'), list('a', 'b')),"should return empty for the same content");
         assertEquals(list('a', 'b'), DiffOf2Collections.diff(list('a', 'b'), list()),"should return A if B is empty");
         assertEquals(list('a', 'b'), DiffOf2Collections.diff(list(), list('a', 'b')),"should return B if A is empty");
         assertEquals(list(), DiffOf2Collections.diff(list(), list()),"should return empty for the empty content");

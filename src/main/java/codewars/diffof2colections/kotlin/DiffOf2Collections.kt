@@ -1,0 +1,3 @@
+package codewars.diffof2colections.kotlin
+
+class DiffOf2Collections
