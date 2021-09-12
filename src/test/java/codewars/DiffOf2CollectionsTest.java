@@ -1,6 +1,5 @@
 package codewars;
 
-import codewars.diffof2colections.java.DiffOf2Collections;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

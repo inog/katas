@@ -1,4 +1,4 @@
-package codewars.diffof2colections.java;
+package codewars;
 
 import java.util.Collection;
 import java.util.List;
