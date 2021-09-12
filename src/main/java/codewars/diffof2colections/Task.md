@@ -10,5 +10,4 @@ A = [a,a,t,e,f,i,j]
 B = [t,g,g,i,k,f]
 
 difference = [a,e,g,j,k]
- 
-Test
+
