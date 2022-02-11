@@ -7,6 +7,6 @@ class DiffOf2Collections {
         val setA = listA.toSet().filter { !listB.contains(it) }
         val setB = listB.toSet().filter { !listA.contains(it) }
         val resultSet = setA + setB
-        return resultSet.toList()
+        return resultSet.toList().sorted()
     }
 }
