@@ -25,11 +25,6 @@ public class SpinWords {
     }
 
     private String spinWord(String word) {
-        char[] chars = word.toCharArray();
-        String result = "";
-        for (int i = chars.length -1; i >= 0 ; i--) {
-            result += chars[i];
-        }
-        return result;
+        return new StringBuilder(word).reverse().toString();
     }
 }
